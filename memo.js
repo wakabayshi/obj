@@ -27,7 +27,8 @@ function Main() {
             submitText: function () {
                 submit(this.name, this.text);
             },
-            deleteText: function () {
+            deleteText(): function (memo.id) {
+                let id=memo.id
                 deleteMemo(baseURL, id);
             }
         },
