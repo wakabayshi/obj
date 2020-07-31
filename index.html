@@ -25,7 +25,7 @@
         <hr>
         <hr>
         <div class="frame">
-            <button type="button" v-on:click="deleteText">削除</button>
+            <button type="button" v-on:click="deleteText(memo.id)">削除</button>
             <ul v-for="memo in textData">
                 <li>ID：{{ memo.id   }} 名前：{{ memo.name }}</li>
                 <li>テキスト：{{ memo.text }}</li>
