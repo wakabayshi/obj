@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>City</title>
+    <link rel="stylesheet" href="city.css" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <script src="city.js"></script>
+</head>
+
+<body>
+    名前
+    <input type="text" id="textId" class="submitMemo" placeholder="名前を書いてください" v-model="input1">
+    メモの内容
+    <input type="text" id="memoId" class="submitText" placeholder="自由に書いてください" v-model="input1">
+    <input type="submit" value="戻る"  onclick="location.href='index.html'">
+    <input type="submit" value="投稿"  onclick="location.href='index.html'" v-on:click="submitMemo"　v-model="input1">
+</body>
+
+</html>

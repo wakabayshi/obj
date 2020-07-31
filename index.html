@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>掲示板</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script>
+    <link rel="stylesheet" href="memo.css" />
+    <script src="memo.js"></script>
+</head>
+
+<body>
+    <h1>掲示板アプリへようこそ</h1>
+    <p>好きなことを書き込みましょう</p>
+    <div id="app">
+        <div class="searchFeild">
+            <div class="box"></div>
+            <input class="search" type="text" size="25px" 　placeholder="名前から検索できます" v-model="searchByName">
+            <button type="button" v-on:click="searchTextByName">検索</button>
+            <br>
+            <div class="box"></div>
+            <input class="search" type="text" size="25px" 　placeholder="IDから検索できます" v-model="searchById">
+            <button type="button" v-on:click="searchTextById">検索 </button>
+        </div>
+        <hr>
+        <hr>
+        <div class="frame">
+            <ul v-for="memo in textData">
+                <li>ID：{{ memo.id   }} 名前：{{ memo.name }}</li>
+                <li>テキスト：{{ memo.text }}</li>
+                <li><button type="button" v-on:click="deleteText">削除</button></li>
+            </ul>
+        </div>
+        <hr>
+        <hr>
+        <h2>掲示板</h2>
+        <div class="bord">
+            <div class="field"></div>
+            名前: <input class="nameField" type="text" size="25" placeholder="名前を書いてください" v-model="name">
+            <br>
+            <textarea name="textField" cols="70" rows="5" 　placeholder="何か書いてください" v-model="text"></textarea>
+            <button type="button" v-on:click=" submitText">投稿</button>
+        </div>
+    </div>
+</body>
+
+</html>
