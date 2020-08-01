@@ -8,27 +8,27 @@
     <link rel="stylesheet" href="memo.css" />
     <script src="memo.js"></script>
 </head>
-
 <body>
     <h1>掲示板アプリへようこそ</h1>
     <p>好きなことを書き込みましょう</p>
     <div id="app">
         <div class="searchFeild">
-            <div class="box"></div>
             <input class="search" type="text" size="25px" 　placeholder="名前から検索できます" v-model="searchByName">
             <button type="button" v-on:click="searchTextByName">検索</button>
             <br>
-            <div class="box"></div>
             <input class="search" type="text" size="25px" 　placeholder="IDから検索できます" v-model="searchById">
             <button type="button" v-on:click="searchTextById">検索 </button>
+            <br>
+            <input class="search" type="text" size="25px" 　placeholder="テキストから検索できます" v-model="searchByText">
+            <button type="button" v-on:click="searchTextByText">検索 </button>
         </div>
         <hr>
         <hr>
         <div class="frame">
-            <button type="button" v-on:click="deleteText(memo.id)">削除</button>
             <ul v-for="memo in textData">
                 <li>ID：{{ memo.id   }} 名前：{{ memo.name }}</li>
                 <li>テキスト：{{ memo.text }}</li>
+                <button type="button" v-on:click="deleteText(memo.id)">削除</button>
             </ul>
         </div>
         <hr>
@@ -43,5 +43,4 @@
         </div>
     </div>
 </body>
-
 </html>

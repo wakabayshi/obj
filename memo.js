@@ -9,6 +9,7 @@ function Main() {
             inputData: [],
             searchById: "",
             searchByName: "",
+            searchByText: "",
             name: "",
             text: "",
             loading: false
@@ -24,12 +25,17 @@ function Main() {
                 url = baseURL + encodeURI(url);
                 updateData(url);
             },
+            searchTextByText: function (event) {
+                let url = "?text_like=" + this.searchByText;
+                url = baseURL + encodeURI(url);
+                updateData(url);
+            },
             submitText: function () {
                 submit(this.name, this.text);
             },
-            deleteText(): function (memo.id) {
-                let id=memo.id
+            deleteText: function (id) {
                 deleteMemo(baseURL, id);
+                console.log(id);
             }
         },
         computed: {
@@ -111,7 +117,7 @@ function submit(name, text) {
 }
 function deleteMemo(baseURL, id) {
     let url = baseURL
-    fetch(url / id, {
+    fetch(url, {
         method: 'DELETE'
     })
     .then(console.log);
