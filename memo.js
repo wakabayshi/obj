@@ -1,7 +1,6 @@
 window.onload = Main;
-let memo;
 const baseURL = "http://localhost:3000/memos";
-
+let memo;
 function Main() {
     memo = new Vue({
         el: "#app",
@@ -104,21 +103,22 @@ function submit(name, text) {
         },
         body: JSON.stringify({
             "name": name,
-            "text": text
+            "text": text,
         })
     }).then(function (res) {
         console.log(res);
         sort(baseURL);
     })
-        .catch(function (error) {
+     .catch(function (error) {
             console.log(error);
         });
 
 }
 function deleteMemo(baseURL, id) {
     let url = baseURL
-    fetch(url, {
+    fetch(`${url}/${id}`, {
         method: 'DELETE'
     })
-    .then(console.log);
+    .then(console.log(id));
+    
 }
