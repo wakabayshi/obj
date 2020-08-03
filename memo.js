@@ -33,7 +33,8 @@ function Main() {
                 submit(this.name, this.text);
             },
             deleteText: function (id) {
-                deleteMemo(baseURL, id);
+               // deleteMemo(baseURL, id);
+               deleteMemo2(id);
                 console.log(id);
             }
         },
@@ -120,5 +121,7 @@ function deleteMemo(baseURL, id) {
         method: 'DELETE'
     })
     .then(console.log(id));
-    
+}
+function deleteMemo2(id) {
+   delete memo.inputData[id];
 }
