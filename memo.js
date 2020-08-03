@@ -123,5 +123,5 @@ function deleteMemo(baseURL, id) {
     .then(console.log(id));
 }
 function deleteMemo2(id) {
-   delete memo.inputData[id];
+   delete memo.inputData[id-1];
 }
